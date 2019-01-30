@@ -15,9 +15,11 @@ exports.signin = function(req, res, next) {
 
 exports.signup = function(req, res, next) {
 	//res.send({ sucess: 'true'})
+
+	console.log(req)
 	
-	const email = req.body.email;
-	const password = req.body.password;
+	const email = req.body.formProps.email;
+	const password = req.body.formProps.password;
 
 	console.log(email)
 	console.log(password)

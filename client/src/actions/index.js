@@ -1,8 +1,10 @@
+import axios from 'axios'
 import { AUTH_USER } from './types';
 
-export const signup = ({email, password}) => {
-	return {
-		type: auth_user,
-		payload: '123213123'
-	};
+export const signup = (formProps) => dispatch => {
+
+	console.log('sending: ' + JSON.stringify(formProps))
+	axios.post('http://localhost:5000/signup', {
+		formProps
+	})
 };
