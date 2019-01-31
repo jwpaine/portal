@@ -10,6 +10,7 @@ import App from './components/App';
 import Welcome from './components/Welcome';
 import Signup from './components/auth/Signup'
 
+import Portal from './components/Portal'
 
 const store = createStore(
 	reducers,
@@ -22,7 +23,8 @@ ReactDOM.render(
 		<BrowserRouter>
 			<App >
 				<Route path="/" exact component={Welcome} />
-				<Route path="/signup" component={props => <Signup  />} /> 
+				<Route path="/signup" component={props => <Signup/>} /> 
+				<Route path="/portal" component={Portal} />
 			</App >
 		</BrowserRouter>
 	</Provider>,

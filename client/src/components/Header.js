@@ -9,7 +9,7 @@ class Header extends Component {
 				<Link to="/signup">Sign Up</Link>
 				<Link to="/signin">Sign In</Link>
 				<Link to="/signout">Signout</Link>
-				<Link to="/feature">Feature</Link>
+				<Link to="/portal">Portal</Link>
 			</div>
 		)
 	}

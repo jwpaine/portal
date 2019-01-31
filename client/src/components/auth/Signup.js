@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { compose } from 'redux'
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types'; // ES6
 import * as actions from '../../actions'
 
 class Signup extends Component {
 
-	onSubmit = formProps => {
-		this.props.signup(formProps);
-	}
+ 
+static contextTypes = {
+    router: PropTypes.object
+}
+ 
+onSubmit = formProps => {
+    this.props.signup(formProps, () => {
+        this.context.router.history.push('/portal');
+    });
+};
+	
 
 	render() {
 		const { handleSubmit } = this.props;
