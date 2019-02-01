@@ -12,11 +12,9 @@ import Signup from './components/auth/Signup'
 
 import Portal from './components/Portal'
 
-const store = createStore(
-	reducers,
-	{},
-	applyMiddleware(reduxThunk)
-)
+const store = createStore(reducers,{
+	auth: { authenticated: localStorage.getItem('token') }
+}, applyMiddleware(reduxThunk))
 
 ReactDOM.render(
 	<Provider store={store}>
