@@ -6,7 +6,7 @@ export const signup = (formProps, callback) => async dispatch => {
 	console.log('sending: ' + JSON.stringify(formProps))
 	
 	try{ 
-		const response = await axios.post('http://localhost:5000/signup', { formProps })
+		const response = await axios.post('http://localhost:5000/signup',  formProps )
 		dispatch({ type: AUTH_USER, payload: response.data.token })
 		localStorage.setItem('token', response.data.token)
 		callback();
@@ -22,3 +22,19 @@ export const signout = () => {
 		payload: ''
 	}
 }
+
+export const signin = (formProps, callback) => async dispatch => {
+
+	console.log('sending: ' + formProps.email)
+	
+	try{ 
+
+		const response = await axios.post('http://localhost:5000/signin',  formProps )
+
+		dispatch({ type: AUTH_USER, payload: response.data.token })
+		localStorage.setItem('token', response.data.token)
+		callback();
+	} catch(e) {
+		dispatch({type: AUTH_ERROR, payload: 'Invalid Login'})
+	}
+};

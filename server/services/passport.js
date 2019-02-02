@@ -9,8 +9,16 @@ const config = require('../config')
 const LocalLogin = new LocalStrategy({usernameField: 'email'}, function(email, password, done) {
 	// verify username and passport, call done with user if correct
 	// otherwise, call done with false
+	console.log('locallogin')
+
+
 	User.findOne({email: email}, function(err, user) {
-		if (err) { return done(err); }
+		if (err) { 
+
+			console.log('err')
+			return done(err); 
+
+		}
 
 		if(!user) { return done(null, false); }
 
@@ -36,6 +44,8 @@ const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
 	// check if user id in payload exists in DB
 	// if yes, call done with that 
 	// otherwise, call done without a user obj
+
+	console.log('jwtLocal');
 
 	User.findById(payload.sub, function(err, user) {
 		if (err) { return done(err, false) }

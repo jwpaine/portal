@@ -8,14 +8,6 @@ export default ChildComponent => {
 		}
 	
 
-	componentDidUpdate() {
-		this.shouldNavigateAway();
-	}
-
-	componentDidUpdate() {
-		this.shouldNavigateAway();
-	}
-
 	shouldNavigateAway() {
 		if (!this.props.auth) {
 			this.props.history.push('/');

@@ -16,10 +16,10 @@ exports.signin = function(req, res, next) {
 exports.signup = function(req, res, next) {
 	//res.send({ sucess: 'true'})
 
-	console.log(req)
+	console.log('signup')
 	
-	const email = req.body.formProps.email;
-	const password = req.body.formProps.password;
+	const email = req.body.email;
+	const password = req.body.password;
 
 	console.log(email)
 	console.log(password)
