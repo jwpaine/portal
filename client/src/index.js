@@ -11,6 +11,7 @@ import Welcome from './components/Welcome';
 import Signup from './components/auth/Signup'
 
 import Portal from './components/Portal'
+import Signout from './components/auth/Signout'
 
 const store = createStore(reducers,{
 	auth: { authenticated: localStorage.getItem('token') }
@@ -23,6 +24,7 @@ ReactDOM.render(
 				<Route path="/" exact component={Welcome} />
 				<Route path="/signup" component={props => <Signup/>} /> 
 				<Route path="/portal" component={Portal} />
+				<Route path="/signout" component={Signout} />
 			</App >
 		</BrowserRouter>
 	</Provider>,
