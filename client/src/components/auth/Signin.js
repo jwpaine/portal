@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'; // ES6
 import * as actions from '../../actions'
 
 class Signin extends Component {
-
+ 
  
 static contextTypes = {
     router: PropTypes.object
